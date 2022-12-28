@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>OAK</title>
+        <title>OAK | HTML Theme</title>
+        <link rel="icon" href="files/logo.png">
         <link rel="stylesheet" href="style.css"/>
         <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Saira+Stencil+One&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Slab&display=swap" rel="stylesheet">   
@@ -11,16 +12,19 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
-        <script src="script.js"></script>
+        
     </head>
     <body>
-       <div class="master-container">
+       <div class="master-container" id="master-container">
 
-            <div class="nav-bar">
+            <div id="nav-bar" class="nav-bar" >
                 <div class="nav-bar-upper">
-                    <i class="fa fa-close"></i>
-                    <div class="search-bar">
-                        
+                    <i id="close-nav" class="fa fa-close" onclick="closeNav()"></i>
+                    <div class="search-bar" id="search-bar">
+                        <input id="searchbar" type="text" placeholder="" onclick="searchAnimation()"/>
+                        <div id="exitSearch" onclick="exitsearch()">
+                            <hr id="searchBarDash">
+                            <hr id="searchBarDashU"></div>
                     </div>
                 </div>
                 <div class="nav-bar-middle">
@@ -28,7 +32,7 @@
                     <h2 class="about">ABOUT</h2>
                     <h2 class="portfolio">PORTFOLIO</h2>
                     <h2 class="blog">BLOG</h2>
-                    <h2 class="contact-nav">CONTACT</h2>
+                    <a href="#contact" onclick="closeNav()"><h2 class="contact-nav" >CONTACT</h2></a>
                 </div>
                 <div class="nav-bar-bottom">
                     <div class="social-icons">
@@ -44,15 +48,17 @@
                     </div>
                 </div>
             </div>
-            <div class="arrow-anchor"></div>
+            <div class="arrow-anchor">
+                <a href="#master-container"><button class="anchor-button"><i class="fa fa-arrow-up"></i></button></a>
+            </div>
         
             <div class="child-container">
                 <div class="header">
                     <div class="oak-logo">
-                        <img src="files/logo.png" alt="">
+                        <a href=""><img src="files/logo.png" alt="OAK Logo"></a>
                     </div>
                     <div class="nav">
-                        <button type="button"></button>
+                        <button id="navBarButton" type="button" onclick="navMove()"></button>
                         <div class="lines">
                             <hr class="line1" id="line1">
                             <hr class="line2" id="line2">
@@ -61,13 +67,14 @@
                     </div>
                 </div>
                 
-                <div class="container1">
-                    <img src="slider/image_1.jpg" alt="">
+                <div class="container1" >
+                    <img id="contImg" src="slider/image_1.jpg" alt="">
                     <div class="text-constant">
                         PURE <p class="bg-color">ELEGANCE</p>
                     </div>
-                    <div class="text-animated">UNMATCHED <br>COMBINATIONS.
+                    <div class="text-animated" id="text-animated">EXOTIC<br>COLLECTION.
                     </div>
+                    
                 </div>
             
                 <div class="container2">
@@ -107,7 +114,7 @@
                         <p class="text1">Laborious to obtain some advantage from it</p> <br>
                     </div>
                     <div class="cont4-nav">
-                    <div class="cont4-nav-button">
+                    <div class="cont4-nav-button" onclick="nav2()">
                         <button type="button"></button>
                         <div class="c4-lines">
                             <hr class="c4-line1">
@@ -116,7 +123,7 @@
                             <hr class="c4-line4">
                         </div>
                     </div>
-                    <div class="cont4-nav-menu">
+                    <div id="cont4-nav-menu" class="cont4-nav-menu">
                         
                     <a href="">ALL</a>
                     <a href="">Branding</a>
@@ -129,6 +136,10 @@
                     <img src="home-portfolio/img_1.jpg" alt="">
                     <div class="overlay">
                     </div>
+                    <div class="border-overlay1"></div>
+                    <div class="border-overlay2"></div>
+                    <div class="border-overlay3"></div>
+                    <div class="border-overlay4"></div>
                     <div class="likes">
                         <i class="fa fa-heart-o"></i><br>
                         <span class="likes-text">60</span>
@@ -137,9 +148,13 @@
                     <p class="g-des">New Bag & Style Fashion</p>
                 </div>
                 <div class="grid-item">
-                    <img src="home-portfolio/img_1.jpg" alt="">
+                    <img src="home-portfolio/img_2.jpg" alt="">
                     <div class="overlay">
                     </div>
+                    <div class="border-overlay1"></div>
+                    <div class="border-overlay2"></div>
+                    <div class="border-overlay3"></div>
+                    <div class="border-overlay4"></div>
                     <div class="likes">
                         <i class="fa fa-heart-o"></i><br>
                         <span class="likes-text">60</span>
@@ -148,9 +163,13 @@
                     <p class="g-des">New Bag & Style Fashion</p>
                 </div>
                 <div class="grid-item">
-                    <img src="home-portfolio/img_1.jpg" alt="">
+                    <img src="home-portfolio/img_3.jpg" alt="">
                     <div class="overlay">
                     </div>
+                    <div class="border-overlay1"></div>
+                    <div class="border-overlay2"></div>
+                    <div class="border-overlay3"></div>
+                    <div class="border-overlay4"></div>
                     <div class="likes">
                         <i class="fa fa-heart-o"></i><br>
                         <span class="likes-text">60</span>
@@ -159,9 +178,13 @@
                     <p class="g-des">New Bag & Style Fashion</p>
                 </div>
                 <div class="grid-item">
-                    <img src="home-portfolio/img_1.jpg" alt="">
+                    <img src="home-portfolio/img_4.jpg" alt="">
                     <div class="overlay">
                     </div>
+                    <div class="border-overlay1"></div>
+                    <div class="border-overlay2"></div>
+                    <div class="border-overlay3"></div>
+                    <div class="border-overlay4"></div>
                     <div class="likes">
                         <i class="fa fa-heart-o"></i><br>
                         <span class="likes-text">60</span>
@@ -170,9 +193,13 @@
                     <p class="g-des">New Bag & Style Fashion</p>
                 </div>
                 <div class="grid-item">
-                    <img src="home-portfolio/img_1.jpg" alt="">
+                    <img src="home-portfolio/img_5.jpg" alt="">
                     <div class="overlay">
                     </div>
+                    <div class="border-overlay1"></div>
+                    <div class="border-overlay2"></div>
+                    <div class="border-overlay3"></div>
+                    <div class="border-overlay4"></div>
                     <div class="likes">
                         <i class="fa fa-heart-o"></i><br>
                         <span class="likes-text">60</span>
@@ -181,9 +208,13 @@
                     <p class="g-des">New Bag & Style Fashion</p>
                 </div>
                 <div class="grid-item">
-                    <img src="home-portfolio/img_1.jpg" alt="">
+                    <img src="home-portfolio/img_6.jpg" alt="">
                     <div class="overlay">
                     </div>
+                    <div class="border-overlay1"></div>
+                    <div class="border-overlay2"></div>
+                    <div class="border-overlay3"></div>
+                    <div class="border-overlay4"></div>
                     <div class="likes">
                         <i class="fa fa-heart-o"></i><br>
                         <span class="likes-text">60</span>
@@ -192,9 +223,13 @@
                     <p class="g-des">New Bag & Style Fashion</p>
                 </div>
                 <div class="grid-item">
-                    <img src="home-portfolio/img_1.jpg" alt="">
+                    <img src="home-portfolio/img_7.jpg" alt="">
                     <div class="overlay">
                     </div>
+                    <div class="border-overlay1"></div>
+                    <div class="border-overlay2"></div>
+                    <div class="border-overlay3"></div>
+                    <div class="border-overlay4"></div>
                     <div class="likes">
                         <i class="fa fa-heart-o"></i><br>
                         <span class="likes-text">60</span>
@@ -203,9 +238,13 @@
                     <p class="g-des">New Bag & Style Fashion</p>
                 </div>
                 <div class="grid-item">
-                    <img src="home-portfolio/img_1.jpg" alt="">
+                    <img src="home-portfolio/img_8.jpg" alt="">
                     <div class="overlay">
                     </div>
+                    <div class="border-overlay1"></div>
+                    <div class="border-overlay2"></div>
+                    <div class="border-overlay3"></div>
+                    <div class="border-overlay4"></div>
                     <div class="likes">
                         <i class="fa fa-heart-o"></i><br>
                         <span class="likes-text">60</span>
@@ -214,42 +253,13 @@
                     <p class="g-des">New Bag & Style Fashion</p>
                 </div>
                 <div class="grid-item">
-                    <img src="home-portfolio/img_1.jpg" alt="">
+                    <img src="home-portfolio/img_9.jpg" alt="">
                     <div class="overlay">
                     </div>
-                    <div class="likes">
-                        <i class="fa fa-heart-o"></i><br>
-                        <span class="likes-text">60</span>
-                    </div>
-                    <p class="g-head">STYLE FASHION</p><br>
-                    <p class="g-des">New Bag & Style Fashion</p>
-                </div>
-                <div class="grid-item">
-                    <img src="home-portfolio/img_1.jpg" alt="">
-                    <div class="overlay">
-                    </div>
-                    <div class="likes">
-                        <i class="fa fa-heart-o"></i><br>
-                        <span class="likes-text">60</span>
-                    </div>
-                    <p class="g-head">STYLE FASHION</p><br>
-                    <p class="g-des">New Bag & Style Fashion</p>
-                </div>
-                <div class="grid-item">
-                    <img src="home-portfolio/img_1.jpg" alt="">
-                    <div class="overlay">
-                    </div>
-                    <div class="likes">
-                        <i class="fa fa-heart-o"></i><br>
-                        <span class="likes-text">60</span>
-                    </div>
-                    <p class="g-head">STYLE FASHION</p><br>
-                    <p class="g-des">New Bag & Style Fashion</p>
-                </div>
-                <div class="grid-item">
-                    <img src="home-portfolio/img_1.jpg" alt="">
-                    <div class="overlay">
-                    </div>
+                    <div class="border-overlay1"></div>
+                    <div class="border-overlay2"></div>
+                    <div class="border-overlay3"></div>
+                    <div class="border-overlay4"></div>
                     <div class="likes">
                         <i class="fa fa-heart-o"></i><br>
                         <span class="likes-text">60</span>
@@ -268,14 +278,14 @@
                     <div class="newsletter-lhalf"><span>STAY INFORMED <br> WITH OUR <strong>NEWSLETTER</strong></span></div>
                         <div class="newsletter-rhalf">
                             <div class="child-div">
-                                <input class="email-box" type="email" placeholder="     Type your Email here.">
+                                <input class="email-box" type="email" placeholder="Type your Email here.">
                                 <button class="subscribe" type="button">SUBSCRIBE</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="footer">
+            <div class="footer" id="contact">
                 <div class="foot-left">
                     <p class="mid-text">O.A.K THEME</p><br>
                         <p class="low-text">City 35 AM <br>
@@ -299,7 +309,8 @@
                             W:www.website.com</p>
                 </div>
             </div>
-       </div> 
+       </div>
+       <script src="script.js"></script> 
     </body>
 
 </html>

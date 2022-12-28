@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+html{
+    scroll-behavior: smooth;
+}
 .master-container{
     
     position: relative;
@@ -49,7 +52,7 @@
 .line1{
     position: absolute;
     width: 25px;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 2px;
     
 }
@@ -57,7 +60,7 @@
     position: absolute;
     top: 8px;
     width: 25px;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 2px;
     
 }
@@ -65,32 +68,90 @@
     position: absolute;
     top: 16px;
     width: 25px;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 2px;
     
 }
-
-.nav-bar{
+.nav:hover .line1{
+    top:-2px;
+}
+.nav:hover .line3{
+    top: 18px;
+}
+#nav-bar{
     display: flex;
     flex-direction: column;
     justify-content: left;
-    width: 30%;
-    height: 100vh;
+    width: 35%;
+    height: 100%;
     background: url("files/nav_bg.jpg");
     
     z-index: 99;
     position: fixed;
     left: 100%;
+   
     padding: 40px;
 
     
 }
+
 .nav-bar-upper{
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
 }
+.search-bar{
+    position: relative;
+    right: 20%;
+    top: 5px;
+    height: 50px;
+    width: 50%;
+}
+#searchbar{
+    border: 2px solid white;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: transparent;
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#searchBarDash{
+    
+    position: absolute;
+    width: 18px;
+    transform: rotate(45deg);
+    transform-origin: bottom right;
+    right: 0;
+    bottom: 0;
+}
+#searchBarDashU{
+    
+    position: absolute;
+    width: 18px;
+    transform: rotate(-45deg);
+    transform-origin: top right;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    
+
+}
+#exitSearch{
+    height: 50px;
+    width: 50px;
+    
+    
+    float: right;
+}
+
 .nav-bar-middle{
     position: absolute;
-    top: 15%;
+    top: 140px;
     font-family: 'Lato';
     font-size: larger;
     color: white;
@@ -98,6 +159,14 @@
     white-space: 40px;
     text-decoration: none;
 
+}
+.nav-bar-middle>a{
+    color: white;
+    text-decoration: none;
+}
+.nav-bar-middle>a:hover{
+    color: aquamarine;
+    text-decoration: none;
 }
 .nav-bar-middle>h2{
     margin-top: 5px;
@@ -114,7 +183,7 @@
 }
 .nav-bar-bottom{
     position: absolute;
-    bottom: 30%;
+    top: 640px;
 }
 .social-icons>a{
     color: white;
@@ -129,14 +198,51 @@
     color: darkgrey;
     font-family: 'Courier';
 }
+.anchor-button{
+    z-index: 10;
+    position: fixed;
+    bottom: 20%;
+    right: 20px;
+    border: 4;
+    background-color: black;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    
+}
+.fa-arrow-up{
+    transform: scale(1.8);
+    color: white;
+}
 .container1{
   
   margin: 0 0 80px 0;
   position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
   
 }
-.container1>img{
-    object-fit: fill;
+#contImg{
+    
+    animation: slideimg 11s ;
+    animation-iteration-count: infinite;
+}
+@keyframes slideimg{
+    0%{
+        transform: scale(1.4);
+        opacity: 1;
+    }
+    50%{
+        transform: scale(1.1);
+        
+    }
+    100%{
+        transform: scale(1.4);
+        opacity: 0.5;
+    }
 }
 
 .text-constant{
@@ -161,6 +267,23 @@
     position: absolute;
     bottom: 25%;
     left: 10%;
+    white-space: pre-line;
+    overflow: hidden;
+    border-right: 2px solid;
+    width: 250px;
+    animation: moveBorder 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes moveBorder {
+    0%{
+        width: 0 ;
+    }
+    50%{
+        width: 250px;
+    }
+    100%{
+        width: 0;
+    }
 }
 .container2{
     display: flex;
@@ -282,7 +405,7 @@ h1{
 .cont4-nav-menu{
     position: absolute;
     top: 20px;
-    left: 120px;
+    left: -500px;
 }
 .cont4-nav-menu>a{
     text-decoration: none;
@@ -296,23 +419,80 @@ h1{
 .cont4-grid{
     padding: 80px 0 0 0 ;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     row-gap: 80px;
-    justify-content: space-between;
+    justify-content: space-evenly;
     
 }
 .grid-item{
     position: relative;
     overflow: hidden;
+    
        
+}
+.border-overlay1{
+    width: 0;
+    
+    position: absolute;
+    top: 0;
+    border-top: 5px solid black;
+    transition: width 0.4s ease-in-out;
+    
+}
+.border-overlay2{
+    height: 0;
+    
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-right: 5px solid black;
+    transition: height 0.4s ease-in;
+    transition-delay: 0.4s;
+    
+}
+.border-overlay3{
+    height: 99%;
+    width: 0%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom: 5px solid black;
+    transition: width 0.4s ease-in-out;
+    
+}
+.border-overlay4{
+    height: 0;
+    width: 97%;
+    position: absolute;
+    bottom: 0;
+    border-left: 5px solid black;
+    transition: height 0.4s ease-in;
+    transition-delay: 0.4s;
+}        
+.grid-item:hover .border-overlay1{
+    width: 99%;
+    height: 100%;
+}
+.grid-item:hover .border-overlay2{
+    
+    height: 100%;
+}
+.grid-item:hover .border-overlay3{
+    width: 100%;
+    
+}
+.grid-item:hover .border-overlay4{
+    
+    height: 100%;
 }
 .grid-item>img{
     height: 100%;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 .grid-item:hover img{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
+
 .likes{
     position: absolute;
     font-size: 30px;
@@ -336,7 +516,7 @@ h1{
     position: absolute;
     bottom: 60px;
     left: 30px;
-    transform: translateY(90px);
+    transform: translateY(120px);
     transition: all 0.2s ease-in-out;
     
 }
@@ -346,7 +526,7 @@ h1{
     position: absolute;
     bottom: 30px;
     left: 30px;
-    transform: translateY(60px);
+    transform: translateY(90px);
     transition: all 0.4s ease-in-out;
 }
 .overlay{
@@ -372,6 +552,7 @@ h1{
 .grid-item:hover .g-des{
     transform: translateY(0px);
 }
+
 .container5{
     display: flex;
     flex-direction: column;
@@ -400,14 +581,17 @@ h1{
 .newsletter-lhalf{
     background-color: aquamarine;
     height: 100%;
+    position: absolute;
+    width: 50%;
+   
     
 }
 .newsletter-lhalf>span{
-    position: absolute;
+    
     font-size: 25px;
-    width: 50%;
+    position:absolute;
     top: 35%;
-    left: 13%;
+    left: 30%;
     
     
 }
